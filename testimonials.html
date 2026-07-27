@@ -21,63 +21,107 @@
 
     <!-- Intro Text -->
     <section class="section" style="padding: 5rem 0 2rem;">
-        <div class="container" style="max-width: 800px; text-align: center;">
-            <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-dark); font-weight: 500;">We can tell you all about why All Marketing Experts will help your business succeed and increase your bottom line. Why not listen to what some of our clients love about us as well?</p>
+        <div class="container" style="text-align: center;">
+            <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-dark); font-weight: 500; max-width: 1000px; margin: 0 auto;">We can tell you all about why All Marketing Experts will help your business succeed and increase your bottom line. Why not listen to what some of our clients love about us as well?</p>
         </div>
     </section>
 
     <!-- Video Gallery Block -->
     <section class="section" style="padding: 0 0 5rem 0;">
-        <div class="container" style="max-width: 700px;">
-            <!-- Main Video -->
-            <div style="position: relative; display: flex; flex-direction: column; justify-content: center; border-radius: 8px; overflow: hidden; box-shadow: var(--box-shadow); background-color: #000; margin-bottom: 1rem;">
-                <img id="main-testi-img" src="images/yt-video-1.jpg" alt="Natalie Sharp RN Testimonial Video" style="width: 100%; height: auto; opacity: 0.85;">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                    <a id="main-testi-link" href="https://youtu.be/-CO2AdN8qy4" target="_blank" style="width: 60px; height: 60px; background: #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </a>
+        <div class="container" style="max-width: 720px;">
+            <!-- Main Video Box -->
+            <div style="border-radius: 8px; overflow: hidden; box-shadow: var(--box-shadow); background-color: #000; margin-bottom: 1.5rem;">
+                <div id="testi-player-wrapper" style="position: relative; width: 100%; cursor: pointer;" onclick="loadTestiIframe('-CO2AdN8qy4', 'Natalie Sharp RN, FNP-BC Testimonial - All Marketing Experts')">
+                    <img id="main-testi-img" src="images/yt-video-1.jpg" alt="Natalie Sharp RN Testimonial Video" style="width: 100%; height: auto; display: block; opacity: 0.85;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 70px; height: 70px; background: #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: transform 0.3s ease;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
                 </div>
-                <div id="main-testi-caption" style="background-color: rgba(0,0,0,0.8); color: #fff; padding: 0.5rem 1rem; font-size: 0.95rem; text-align: center; width: 100%; font-family: var(--font-heading); font-weight: 600;">
+                <div id="main-testi-caption" style="background-color: rgba(0,0,0,0.9); color: #fff; padding: 0.8rem 1.5rem; font-size: 1.05rem; text-align: center; width: 100%; font-family: var(--font-heading); font-weight: 600;">
                     Natalie Sharp RN, FNP-BC Testimonial - All Marketing Experts
                 </div>
             </div>
             
-            <!-- Video Thumbnails -->
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
-                <img class="testi-thumb" src="images/yt-video-2.jpg" alt="Video Review 2" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('d1rgLh710Qo', 'images/yt-video-2.jpg', 'Client Video Review 2 - All Marketing Experts')">
-                <img class="testi-thumb" src="images/yt-video-3.jpg" alt="Video Review 3" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('zRMtzLHW5sA', 'images/yt-video-3.jpg', 'Client Video Review 3 - All Marketing Experts')">
-                <img class="testi-thumb" src="images/yt-video-4.jpg" alt="Video Review 4" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('-t8v6k-Wnjs', 'images/yt-video-4.jpg', 'Client Video Review 4 - All Marketing Experts')">
-                <img class="testi-thumb" src="images/yt-video-5.jpg" alt="Video Review 5" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('aZb1zYjVrWs', 'images/yt-video-5.jpg', 'Client Video Review 5 - All Marketing Experts')">
+            <!-- Video Thumbnails Carousel -->
+            <div style="position: relative; display: flex; align-items: center; margin-top: 1rem; width: 100%;">
+                <!-- Left Control -->
+                <button onclick="slideThumbnails(-1)" style="position: absolute; left: -35px; background: rgba(0,0,0,0.7); color: #fff; border: none; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; font-size: 1.2rem; font-weight: bold; line-height: 1; outline: none; transition: background 0.2s;">&#8249;</button>
+                
+                <!-- Visible Viewport -->
+                <div style="overflow: hidden; width: 100%; padding: 4px 0;">
+                    <div id="testi-carousel-track" style="display: flex; gap: 12px; transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); transform: translateX(0px);">
+                        <!-- Thumbnail 1 (Natalie Sharp 1) -->
+                        <div class="testi-thumb-item active" style="flex: 0 0 calc((100% - 36px) / 4); position: relative; border-radius: 6px; overflow: hidden; cursor: pointer; box-shadow: var(--card-shadow); aspect-ratio: 16/9; transition: all 0.3s ease; border: 2px solid var(--primary-color);" onclick="loadTestiIframe('-CO2AdN8qy4', 'Natalie Sharp RN, FNP-BC Testimonial - All Marketing Experts', this)">
+                            <img src="images/yt-video-1.jpg" alt="Natalie Sharp RN Testimonial" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            </div>
+                        </div>
+                        <!-- Thumbnail 2 (Dr. Eugene Raber) -->
+                        <div class="testi-thumb-item" style="flex: 0 0 calc((100% - 36px) / 4); position: relative; border-radius: 6px; overflow: hidden; cursor: pointer; box-shadow: var(--card-shadow); aspect-ratio: 16/9; transition: all 0.3s ease; border: 2px solid transparent;" onclick="loadTestiIframe('d1rgLh710Qo', 'Eugene Raber, MD - Pure Vitality RX Testimonial', this)">
+                            <img src="images/yt-video-2.jpg" alt="Eugene Raber MD Testimonial" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            </div>
+                        </div>
+                        <!-- Thumbnail 3 (Dr. Fiorillo & Sandra) -->
+                        <div class="testi-thumb-item" style="flex: 0 0 calc((100% - 36px) / 4); position: relative; border-radius: 6px; overflow: hidden; cursor: pointer; box-shadow: var(--card-shadow); aspect-ratio: 16/9; transition: all 0.3s ease; border: 2px solid transparent;" onclick="loadTestiIframe('zRMtzLHW5sA', 'Dr Fiorillo & Sandra\'s Testimonials of MD Marketing Experts', this)">
+                            <img src="images/yt-video-3.jpg" alt="Dr Fiorillo Testimonial" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            </div>
+                        </div>
+                        <!-- Thumbnail 4 (Natalie Sharp 2) -->
+                        <div class="testi-thumb-item" style="flex: 0 0 calc((100% - 36px) / 4); position: relative; border-radius: 6px; overflow: hidden; cursor: pointer; box-shadow: var(--card-shadow); aspect-ratio: 16/9; transition: all 0.3s ease; border: 2px solid transparent;" onclick="loadTestiIframe('-t8v6k-Wnjs', 'Natalie Sharp Talks Explains Why MD Marketing Experts is Amazing', this)">
+                            <img src="images/yt-video-4.jpg" alt="Natalie Sharp Testimonial" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            </div>
+                        </div>
+                        <!-- Thumbnail 5 (Sandra Office Manager) -->
+                        <div class="testi-thumb-item" style="flex: 0 0 calc((100% - 36px) / 4); position: relative; border-radius: 6px; overflow: hidden; cursor: pointer; box-shadow: var(--card-shadow); aspect-ratio: 16/9; transition: all 0.3s ease; border: 2px solid transparent;" onclick="loadTestiIframe('aZb1zYjVrWs', 'Sandra (Office Manager) Describes How MD Marketing Experts Handled Everything', this)">
+                            <img src="images/yt-video-5.jpg" alt="Sandra Testimonial" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Control -->
+                <button onclick="slideThumbnails(1)" style="position: absolute; right: -35px; background: rgba(0,0,0,0.7); color: #fff; border: none; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; font-size: 1.2rem; font-weight: bold; line-height: 1; outline: none; transition: background 0.2s;">&#8250;</button>
             </div>
         </div>
     </section>
 
     <!-- Testimonials List Section -->
     <section class="section section-bg" style="padding: 5rem 0;">
-        <div class="container" style="max-width: 900px;">
+        <div class="container">
             
             <!-- Testimonial 1 -->
-            <div style="margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“These guys built us the best website! It went pretty fast and the business advice was very helpful as well. Steve is a former financial advisor from Morgan Stanley and brought a totally different set of skills to us that other developers didn't even bring up. Very organized and professional!”</p>
-                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~C. CHECKER</h4>
+            <div style="margin-bottom: 4rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“These guys built us the best website! It went pretty fast and the business advice was very helpful as well. Steve is a former financial advisor from Morgan Stanley and brought a totally different set of skills to us that other developers didn't even bring up. Very organized and professional!”</p>
+                <h4 style="font-size: 1.1rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~C. CHECKER</h4>
             </div>
 
             <!-- Testimonial 2 -->
-            <div style="margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“My boss asked me to get us help with our website that looked really bad. I found Marketing Experts, called them and 2 other companies. They were by far the most knowledgeable and nice. Steve speaks in plain understandable terms and you can tell he is experienced. They are reasonably priced but VERY proactive and responsive with us. I refer them to other office managers because they make our lives easier by handling all stuff digital.”</p>
-                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~EMMA W.</h4>
+            <div style="margin-bottom: 4rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“My boss asked me to get us help with our website that looked really bad. I found Marketing Experts, called them and 2 other companies. They were by far the most knowledgeable and nice. Steve speaks in plain understandable terms and you can tell he is experienced. They are reasonably priced but VERY proactive and responsive with us. I refer them to other office managers because they make our lives easier by handling all stuff digital.”</p>
+                <h4 style="font-size: 1.1rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~EMMA W.</h4>
             </div>
 
             <!-- Testimonial 3 -->
-            <div style="margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“I just finished my website with MD Marketing Experts and I have to say that the company is amazing. They worked with me every step of the way. I got every little thing that I needed and wanted. I had prompt feedback and prompt responses to emails, texts, and phone calls. There was absolutely no lag in information. Everything I asked for was answered. They went well and beyond means to make me happy. There was never a 'no' or a hesitancy or excuses about why they couldn't get something done. All they did was exceed my expectations.”</p>
-                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~NATALIE SHARP, FNP-BC</h4>
+            <div style="margin-bottom: 4rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“I just finished my website with MD Marketing Experts and I have to say that the company is amazing. They worked with me every step of the way. I got every little thing that I needed and wanted. I had prompt feedback and prompt responses to emails, texts, and phone calls. There was absolutely no lag in information. Everything I asked for was answered. They went well and beyond means to make me happy. There was never a 'no' or a hesitancy or excuses about why they couldn't get something done. All they did was exceed my expectations.”</p>
+                <h4 style="font-size: 1.1rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~NATALIE SHARP, FNP-BC</h4>
             </div>
 
             <!-- Testimonial 4 -->
             <div style="margin-bottom: 1rem;">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“I like that I don't have to worry about anything. It's with one company instead of with 12 different people. Everything is together and synced. Everything makes sense. Previously, there wasn't enough flow. The right hand didn't know what the left was doing. Now we monitor more what's working and what's not so we don't spend our money on what's not working. Everyone is so helpful. If there is something I don't know the answer to, they say 'I'll find out. I'll call the company. I'll talk to them.' They researched products and services that we do. They've done webinars that I don't have time to do. They're really helpful like that. I really think the whole company is great.”</p>
-                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~SANDRA SIGNORELLI, OFFICE MANAGER</h4>
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“I like that I don't have to worry about anything. It's with one company instead of with 12 different people. Everything is together and synced. Everything makes sense. Previously, there wasn't enough flow. The right hand didn't know what the left was doing. Now we monitor more what's working and what's not so we don't spend our money on what's not working. Everyone is so helpful. If there is something I don't know the answer to, they say 'I'll find out. I'll call the company. I'll talk to them.' They researched products and services that we do. They've done webinars that I don't have time to do. They're really helpful like that. I really think the whole company is great.”</p>
+                <h4 style="font-size: 1.1rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~SANDRA SIGNORELLI, OFFICE MANAGER</h4>
             </div>
 
         </div>
@@ -88,10 +132,51 @@
 
     <script src="js/main.js"></script>
     <script>
-        function swapTestiVideo(videoId, imageSrc, caption) {
-            document.getElementById('main-testi-img').src = imageSrc;
-            document.getElementById('main-testi-link').href = 'https://youtu.be/' + videoId;
-            document.getElementById('main-testi-caption').textContent = caption;
+        let currentSlideIndex = 0;
+        const totalThumbnails = 5;
+        const visibleCount = 4;
+
+        function slideThumbnails(direction) {
+            const track = document.getElementById('testi-carousel-track');
+            if (!track) return;
+            
+            const items = track.getElementsByClassName('testi-thumb-item');
+            if (items.length === 0) return;
+            
+            const itemWidth = items[0].getBoundingClientRect().width;
+            const gap = 12;
+            const step = itemWidth + gap;
+            
+            const maxIndex = totalThumbnails - visibleCount;
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex > maxIndex) {
+                currentSlideIndex = maxIndex;
+            }
+            
+            const translation = -currentSlideIndex * step;
+            track.style.transform = 'translateX(' + translation + 'px)';
+        }
+
+        function loadTestiIframe(videoId, captionText, clickedElement) {
+            var wrapper = document.getElementById('testi-player-wrapper');
+            wrapper.innerHTML = '<iframe width="100%" height="400" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:none; width:100%; aspect-ratio:16/9; display:block;"></iframe>';
+            if (captionText) {
+                document.getElementById('main-testi-caption').textContent = captionText;
+            }
+            
+            // Highlight clicked thumbnail
+            if (clickedElement) {
+                const items = document.getElementsByClassName('testi-thumb-item');
+                for (let i = 0; i < items.length; i++) {
+                    items[i].style.border = '2px solid transparent';
+                    items[i].classList.remove('active');
+                }
+                clickedElement.style.border = '2px solid var(--primary-color)';
+                clickedElement.classList.add('active');
+            }
         }
     </script>
 </body>
