@@ -859,5 +859,58 @@ textarea.form-control {
     font-weight: 800;
 }
 
+/* Branding Page Specific Elements */
+.branding-hero {
+    height: 380px;
+    background: url('../images/business-branding.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.branding-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* Consulting Page Specific Elements */
+.consulting-hero {
+    height: 380px;
+    background: url('../images/consulting-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.consulting-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.consulting-hero-label span {
+    font-weight: 800;
+}
+
+
+
 
 
