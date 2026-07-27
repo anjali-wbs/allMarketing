@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Remove .html from browser address bar
+    if (window.location.pathname.endsWith('.html')) {
+        const cleanPath = window.location.pathname.slice(0, -5);
+        window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+    }
+
     // Render Header and Footer
     renderHeader();
     renderFooter();
