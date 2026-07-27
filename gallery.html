@@ -6,6 +6,40 @@
     <title>Gallery - All Marketing Experts</title>
     <meta name="description" content="View our portfolio of website designs, logo designs, SEO case studies and digital marketing success stories at All Marketing Experts.">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 4rem;
+        }
+        .gallery-item-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            background-color: var(--white);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item-card:hover {
+            transform: scale(1.03);
+        }
+        .gallery-item-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (max-width: 991px) {
+            .gallery-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 575px) {
+            .gallery-grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -13,114 +47,65 @@
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="padding-bottom: 4rem;">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 1rem;">Our Gallery</h1>
-            <p style="font-size: 1.25rem; font-weight: 500; color: var(--primary-color);">A showcase of website designs, branding, and digital marketing success stories.</p>
+    <section class="gallery-hero">
+        <div class="container">
+            <div class="gallery-hero-label">GALLERY</div>
         </div>
     </section>
 
-    <!-- Gallery Portfolio -->
-    <section class="section section-bg">
+    <!-- Section 1: Website Design Gallery -->
+    <section class="section" style="padding: 5rem 0;">
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <h2 style="font-size: 2.2rem; color: #01bfd2; margin-bottom: 2rem; text-transform: uppercase;">WEBSITE DESIGN GALLERY</h2>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; text-align: left;">Would you go to a company whose office looks run-down on the outside, and is cluttered and falling apart on the inside? Absolutely not. The same goes for websites – think of your website as your virtual office in a neighborhood full of other companies' virtual offices.</p>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3rem; text-align: left;">Potential clients will visit many websites before deciding on who to contact. Let's make that an easy decision by making your website the best in the industry. All Marketing Experts can take care of everything, including but not limited to logo creation, <a href="graphic-design.html" style="color: #ff6900; text-decoration: underline;">graphic art</a>, programming, and overall design – we do it all. We make sure your company's website looks sophisticated and professional. Couple that with our <a href="marketing.html" style="color: #ff6900; text-decoration: underline;">marketing services</a> and you'll have a recipe for successful business growth!</p>
+            
+            <!-- Gallery Items Grid -->
+            <div class="gallery-grid-4">
+                <div class="gallery-item-card"><img src="images/port-hudson.png" alt="Portfolio Image 1"></div>
+                <div class="gallery-item-card"><img src="images/port-minichill.jpg" alt="Portfolio Image 2"></div>
+                <div class="gallery-item-card"><img src="images/port-bench.png" alt="Portfolio Image 3"></div>
+                <div class="gallery-item-card"><img src="images/port-gcr.png" alt="Portfolio Image 4"></div>
+                <div class="gallery-item-card"><img src="images/port-port6.jpg" alt="Portfolio Image 5"></div>
+                <div class="gallery-item-card"><img src="images/port-bus.png" alt="Portfolio Image 6"></div>
+                <div class="gallery-item-card"><img src="images/port-albatross.png" alt="Portfolio Image 7"></div>
+                <div class="gallery-item-card"><img src="images/port-roofing.png" alt="Portfolio Image 8"></div>
+                <div class="gallery-item-card"><img src="images/port-montage.jpg" alt="Portfolio Image 9"></div>
+                <div class="gallery-item-card"><img src="images/port-barr.png" alt="Portfolio Image 10"></div>
+                <div class="gallery-item-card"><img src="images/port-fertility.jpg" alt="Portfolio Image 11"></div>
+                <div class="gallery-item-card"><img src="images/port-tms.jpg" alt="Portfolio Image 12"></div>
+                <div class="gallery-item-card"><img src="images/port-crg.png" alt="Portfolio Image 13"></div>
+                <div class="gallery-item-card"><img src="images/port-xpd.png" alt="Portfolio Image 14"></div>
+                <div class="gallery-item-card"><img src="images/port-spark.png" alt="Portfolio Image 15"></div>
+                <div class="gallery-item-card"><img src="images/port-couples.jpg" alt="Portfolio Image 16"></div>
+                <div class="gallery-item-card"><img src="images/port-diamond.jpg" alt="Portfolio Image 17"></div>
+                <div class="gallery-item-card"><img src="images/port-gforce.png" alt="Portfolio Image 18"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Our Expertise -->
+    <section class="section section-bg" style="padding: 5rem 0;">
         <div class="container">
-            <div class="gallery-grid">
-                
-                <!-- Hudson Paul Salon -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-hudson.png" alt="Hudson Paul Salon Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">Website Design / WordPress / Custom Theme</div>
-                        <h4>Hudson Paul Salon</h4>
-                        <p class="gallery-desc">Simone wanted an aesthetically beautiful website that would reflect the elegance and sophistication of their hair salon. The site was built with a responsive design, clean layouts, and search engine optimization to enhance visibility in search engines.</p>
-                    </div>
+            <div class="expertise-section">
+                <div class="expertise-left">
+                    <h2>OUR EXPERTISE</h2>
+                    <p>We have experience with the top search, social networks and programming languages. Collectively these skills allow us to achieve top search engine ranks to bring our clients more business and also manage their reputation.</p>
                 </div>
-
-                <!-- TMS Long Island Corp -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-tms.jpg" alt="TMS Long Island Corp Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">Website Redesign / Logo & SEO</div>
-                        <h4>TMS Long Island Corp</h4>
-                        <p class="gallery-desc">Stephen and Kristen came to us after spending a lot on a poorly built site with a bad user interface. We rebuilt the website from the ground up, created a brand-new logo, and managed their SEO for maximum conversions.</p>
-                    </div>
+                <div class="expertise-right">
+                    <img src="images/logo-1.png" alt="Google">
+                    <img src="images/logo-2.png" alt="LinkedIn">
+                    <img src="images/logo-3.png" alt="WooCommerce">
+                    <img src="images/logo-4.png" alt="Instagram">
+                    <img src="images/logo-5.png" alt="Pinterest">
+                    <img src="images/logo-6.png" alt="YouTube">
+                    <img src="images/logo-7.png" alt="Yelp">
+                    <img src="images/wordpress.png" alt="WordPress">
+                    <img src="images/logo-9.png" alt="Facebook">
+                    <img src="images/m-soft.png" alt="Microsoft">
+                    <img src="images/logo-15.png" alt="Twitter">
+                    <img src="images/hubspot.png" alt="HubSpot">
                 </div>
-
-                <!-- Bench Artisan -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-bench.png" alt="Bench Artisan Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">Website Design / Clean & Modern</div>
-                        <h4>Bench Artisan</h4>
-                        <p class="gallery-desc">Paul Karian sought a website that was modern, professional, and straightforward, reflecting craftsmanship in bench manufacturing. We utilized a minimalistic design, fast loading, and responsive layouts.</p>
-                    </div>
-                </div>
-
-                <!-- Garden City Renovations -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-gcr.png" alt="Garden City Renovations Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">Corporate Identity & Website</div>
-                        <h4>Garden City Renovations</h4>
-                        <p class="gallery-desc">To stand out in a highly competitive contracting market, we created a brand that looks trustworthy and professional, encouraging homeowners to call and request services.</p>
-                    </div>
-                </div>
-
-                <!-- The Couples Center -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-couples.jpg" alt="The Couples Center Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">WordPress / Divi Theme CMS</div>
-                        <h4>The Couples Center</h4>
-                        <p class="gallery-desc">A simple, pretty WordPress site built using a flexible theme structure, allowing relationship counselors to manage their backend content easily, paired with local digital marketing.</p>
-                    </div>
-                </div>
-
-                <!-- Guardian Bus Company -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-bus.png" alt="Guardian Bus Company Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">Web Design & Marketing</div>
-                        <h4>Guardian Bus Company</h4>
-                        <p class="gallery-desc">Redesigned to focus on safety and reliability, positioning the bus company as a safe transport provider trusted with children, highlighting safety first across all pages.</p>
-                    </div>
-                </div>
-
-                <!-- Albatross MFG -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-albatross.png" alt="Albatross MFG Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">E-Commerce & Branding</div>
-                        <h4>Albatross MFG</h4>
-                        <p class="gallery-desc">Designed to position the manufacturer as a quality-first provider, highlighting prestigious customers, custom product abilities, and a clean E-commerce pipeline.</p>
-                    </div>
-                </div>
-
-                <!-- Nassau Roofing Experts -->
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="images/portfolio-roofing.png" alt="Nassau Roofing Experts Website Case Study">
-                    </div>
-                    <div class="gallery-info">
-                        <div class="gallery-subtitle">Local SEO & Website Design</div>
-                        <h4>Nassau Roofing Experts</h4>
-                        <p class="gallery-desc">Built to address roofing needs in a competitive local niche, optimizing the conversion path and setting up local area SEO, resulting in high organic rankings and daily calls.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
