@@ -1006,6 +1006,106 @@ textarea.form-control {
     color: var(--text-dark);
 }
 
+/* Website Design Page Specific Elements */
+.webdesign-hero {
+    height: 380px;
+    background: url('../images/webdesign-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.webdesign-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* Graphic Design Page Specific Elements */
+.graphic-hero {
+    height: 380px;
+    background: url('../images/graphic-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.graphic-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* Research & Content Page Specific Elements */
+.research-hero {
+    height: 380px;
+    background: url('../images/research-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.research-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* Photography Page Specific Elements */
+.photography-hero {
+    height: 380px;
+    background: url('../images/photography-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.photography-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+
+
+
+
 
 
 

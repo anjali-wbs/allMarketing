@@ -6,6 +6,90 @@
     <title>Professional Photography | All Marketing Experts</title>
     <meta name="description" content="Corporate photography, team headshots, product photography and office location shoots.">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Slider Styles */
+        .photo-slider-container {
+            position: relative;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .photo-slides-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+        .photo-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .photo-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Navigation Arrows */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0,0,0,0.1);
+            color: #2d3940;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .slider-arrow:hover {
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .slider-arrow-left {
+            left: 15px;
+        }
+        .slider-arrow-right {
+            right: 15px;
+        }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.5rem;
+        }
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+        }
+        .slider-dot.active {
+            background-color: #2d3940;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,25 +97,78 @@
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="padding-bottom: 4rem;">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <h1 class="hero-title" style="font-size: 3.2rem; margin-bottom: 1rem;">Corporate Photography</h1>
-            <p style="font-size: 1.25rem; font-weight: 500; color: var(--primary-color); text-transform: uppercase; letter-spacing: 1px;">REAL IMAGES FOR REAL TRUST</p>
+    <section class="photography-hero">
+        <div class="container">
+            <div class="photography-hero-label">PHOTOGRAPHY</div>
         </div>
     </section>
 
-    <!-- Content Sections -->
-    <section class="section section-bg">
-        <div class="container service-details">
-            <div class="service-main">
-                <h2>High-Quality Custom Photography</h2>
-<p>Stock photos look generic and don't build trust. Real photos of your team, office, and craftsmanship make all the difference.</p>
-<p>We provide professional photography services, capturing high-resolution headshots, team action shots, office environments, and finished projects.</p>
-<p>These custom assets are utilized across your website, social media, and marketing brochures, showcasing the real humans behind your business.</p>
+    <!-- Section 1: Photography Experts -->
+    <section class="section" style="padding: 5rem 0;">
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <h2 style="font-size: 2.2rem; color: #01bfd2; margin-bottom: 2rem; text-transform: uppercase;">PHOTOGRAPHY EXPERTS</h2>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; text-align: left;">When it comes to establishing a credible, trustworthy first impression, nothing is more beneficial than having your own professionally done photographs to use on your website and other marketing materials.</p>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3.5rem; text-align: left;">Separate yourself from your competition by not using stock photography or shots taken from cell phones. Let our expert photographers create the professional image that you want your clients to see. Take a look at some examples of work we performed for Dr. Fiorillo, and you'll see what a tremendous impact a photoshoot can have on the overall look and feel of a website.</p>
+            
+            <!-- Comparison Showcase Slider -->
+            <div class="photo-slider-container">
+                <!-- Navigation Arrows -->
+                <button class="slider-arrow slider-arrow-left" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="slider-arrow slider-arrow-right" onclick="moveSlide(1)">&#10095;</button>
 
-                <div style="margin-top: 4rem; text-align: center;">
-                    <a href="contact.html" class="btn btn-primary">Schedule a Free Consultation</a>
-                    <a href="gallery.html" class="btn btn-outline" style="margin-left: 1rem;">View Our Work</a>
+                <div class="photo-slides-viewport">
+                    <div class="photo-slides" id="photoSlides">
+                        <div class="photo-slide"><img src="images/mp-slider-5.jpg" alt="Photography Slider Image 1"></div>
+                        <div class="photo-slide"><img src="images/mp-slider-4.jpg" alt="Photography Slider Image 2"></div>
+                        <div class="photo-slide"><img src="images/mp-slider-3.jpg" alt="Photography Slider Image 3"></div>
+                        <div class="photo-slide"><img src="images/mp-slider-2.jpg" alt="Photography Slider Image 4"></div>
+                        <div class="photo-slide"><img src="images/mp-slider-1.jpg" alt="Photography Slider Image 5"></div>
+                        <div class="photo-slide"><img src="images/slider-9-1.jpg" alt="Photography Slider Image 6"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="slider-dots">
+                <button class="slider-dot active" onclick="currentSlide(0)"></button>
+                <button class="slider-dot" onclick="currentSlide(1)"></button>
+                <button class="slider-dot" onclick="currentSlide(2)"></button>
+                <button class="slider-dot" onclick="currentSlide(3)"></button>
+                <button class="slider-dot" onclick="currentSlide(4)"></button>
+                <button class="slider-dot" onclick="currentSlide(5)"></button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 2: Call Now Banner -->
+    <section class="section" style="background-color: #f4f9fc; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 1.8rem; color: var(--text-dark); margin: 0; font-family: var(--font-heading); font-weight: 600;">CALL NOW TO GET STARTED: <a href="tel:516-862-2653" style="color: #ff6900; text-decoration: underline;">516-862-2653</a></h2>
+        </div>
+    </section>
+
+    <!-- Section 3: Our Expertise -->
+    <section class="section" style="padding: 5rem 0;">
+        <div class="container">
+            <div class="expertise-section">
+                <div class="expertise-left">
+                    <h2>OUR EXPERTISE</h2>
+                    <p>We have experience with the top search, social networks and programming languages. Collectively these skills allow us to achieve top search engine ranks to bring our clients more business and also manage their reputation.</p>
+                </div>
+                <div class="expertise-right">
+                    <img src="images/logo-1.png" alt="Google">
+                    <img src="images/logo-2.png" alt="LinkedIn">
+                    <img src="images/logo-3.png" alt="WooCommerce">
+                    <img src="images/logo-4.png" alt="Instagram">
+                    <img src="images/logo-5.png" alt="Pinterest">
+                    <img src="images/logo-6.png" alt="YouTube">
+                    <img src="images/logo-7.png" alt="Yelp">
+                    <img src="images/wordpress.png" alt="WordPress">
+                    <img src="images/logo-9.png" alt="Facebook">
+                    <img src="images/m-soft.png" alt="Microsoft">
+                    <img src="images/logo-15.png" alt="Twitter">
+                    <img src="images/hubspot.png" alt="HubSpot">
                 </div>
             </div>
         </div>
@@ -41,5 +178,44 @@
     <div id="footer-placeholder"></div>
 
     <script src="js/main.js"></script>
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementById('photoSlides');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function showSlide(n) {
+            slideIndex = n;
+            if (slideIndex >= dots.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = dots.length - 1;
+            
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
+            });
+        }
+
+        function moveSlide(step) {
+            showSlide(slideIndex + step);
+        }
+
+        function currentSlide(n) {
+            showSlide(n);
+        }
+
+        // Auto rotate slides
+        let autoSlideInterval = setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+
+        // Pause auto rotation on user interaction
+        const container = document.querySelector('.photo-slider-container');
+        container.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        container.addEventListener('mouseleave', () => {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                moveSlide(1);
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
