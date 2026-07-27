@@ -910,6 +910,106 @@ textarea.form-control {
     font-weight: 800;
 }
 
+/* Marketing Page Specific Elements */
+.marketing-hero {
+    height: 380px;
+    background: url('../images/marketing-banner.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.marketing-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* SEO Page Specific Elements */
+.seo-hero {
+    height: 380px;
+    background: url('../images/seo-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.seo-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* PPC Page Specific Elements */
+.ppc-hero {
+    height: 380px;
+    background: url('../images/ppc-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.ppc-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* Social Media Page Specific Elements */
+.social-hero {
+    height: 380px;
+    background: url('../images/social-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.social-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+
+
+
+
 
 
 
