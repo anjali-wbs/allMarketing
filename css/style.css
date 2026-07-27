@@ -805,3 +805,59 @@ textarea.form-control {
     }
 }
 
+/* Company Profile Page Specific Elements */
+.profile-hero {
+    height: 380px;
+    background: url('../images/about-banner.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.profile-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.profile-hero-label span {
+    font-weight: 800;
+}
+
+/* Testimonial Page Specific Elements */
+.testimonial-hero {
+    height: 380px;
+    background: url('../images/testimonial.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.testimonial-hero-label {
+    background-color: var(--white);
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.testimonial-hero-label span {
+    font-weight: 800;
+}
+
+
+

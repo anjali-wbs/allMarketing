@@ -13,46 +13,73 @@
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="padding-bottom: 4rem;">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 1rem;">Client Testimonials</h1>
-            <p style="font-size: 1.25rem; font-weight: 500; color: var(--primary-color);">What our clients say about our website design & SEO services.</p>
+    <section class="testimonial-hero">
+        <div class="container">
+            <div class="testimonial-hero-label">OUR <span>TESTIMONIALS</span></div>
         </div>
     </section>
 
-    <!-- Testimonial Grid -->
-    <section class="section section-bg">
-        <div class="container">
-            <div class="grid-2">
-                <!-- Card 1 -->
-                <div class="card" style="padding: 3rem;">
-                    <div style="font-size: 3rem; line-height: 1; color: var(--secondary-color); margin-bottom: 1rem;">“</div>
-                    <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; line-height: 1.7; color: var(--text-muted);">"All Marketing Experts redesigned our website and took over our local SEO program. Our search ranks have soared, and our inbox is constantly filled with new qualified inquiries. Highly recommend their transparent numbers-driven reporting!"</p>
-                    <h4 style="margin-bottom: 0.2rem; color: var(--dark-color);">~ C. Checker</h4>
-                    <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--primary-color); font-weight: 700;">Business Owner</span>
+    <!-- Intro Text -->
+    <section class="section" style="padding: 5rem 0 2rem;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-dark); font-weight: 500;">We can tell you all about why All Marketing Experts will help your business succeed and increase your bottom line. Why not listen to what some of our clients love about us as well?</p>
+        </div>
+    </section>
+
+    <!-- Video Gallery Block -->
+    <section class="section" style="padding: 0 0 5rem 0;">
+        <div class="container" style="max-width: 700px;">
+            <!-- Main Video -->
+            <div style="position: relative; display: flex; flex-direction: column; justify-content: center; border-radius: 8px; overflow: hidden; box-shadow: var(--box-shadow); background-color: #000; margin-bottom: 1rem;">
+                <img id="main-testi-img" src="images/yt-video-1.jpg" alt="Natalie Sharp RN Testimonial Video" style="width: 100%; height: auto; opacity: 0.85;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <a id="main-testi-link" href="https://youtu.be/-CO2AdN8qy4" target="_blank" style="width: 60px; height: 60px; background: #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </a>
                 </div>
-                <!-- Card 2 -->
-                <div class="card" style="padding: 3rem;">
-                    <div style="font-size: 3rem; line-height: 1; color: var(--secondary-color); margin-bottom: 1rem;">“</div>
-                    <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; line-height: 1.7; color: var(--text-muted);">"Working with All Marketing Experts has been a game-changer. They built a custom, beautiful theme for us and set up our SEO. I love having direct access to our account manager's cell phone number."</p>
-                    <h4 style="margin-bottom: 0.2rem; color: var(--dark-color);">~ Emma W.</h4>
-                    <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--primary-color); font-weight: 700;">Creative Director</span>
-                </div>
-                <!-- Card 3 -->
-                <div class="card" style="padding: 3rem;">
-                    <div style="font-size: 3rem; line-height: 1; color: var(--secondary-color); margin-bottom: 1rem;">“</div>
-                    <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; line-height: 1.7; color: var(--text-muted);">"Their medical practice marketing expertise has helped us consistently bring in new patients. The transparency and ease of reading reports are unmatched by any other digital agency."</p>
-                    <h4 style="margin-bottom: 0.2rem; color: var(--dark-color);">~ NATALIE SHARP, FNP-BC</h4>
-                    <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--primary-color); font-weight: 700;">Family Nurse Practitioner</span>
-                </div>
-                <!-- Card 4 -->
-                <div class="card" style="padding: 3rem;">
-                    <div style="font-size: 3rem; line-height: 1; color: var(--secondary-color); margin-bottom: 1rem;">“</div>
-                    <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; line-height: 1.7; color: var(--text-muted);">"Our general contracting business needed to stand out. All Marketing Experts created a brand identity that looks trustworthy and professional, leading to a steady stream of homeowners calling for service."</p>
-                    <h4 style="margin-bottom: 0.2rem; color: var(--dark-color);">~ SANDRA SIGNORELLI, OFFICE MANAGER</h4>
-                    <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--primary-color); font-weight: 700;">Office Administrator</span>
+                <div id="main-testi-caption" style="background-color: rgba(0,0,0,0.8); color: #fff; padding: 0.5rem 1rem; font-size: 0.95rem; text-align: center; width: 100%; font-family: var(--font-heading); font-weight: 600;">
+                    Natalie Sharp RN, FNP-BC Testimonial - All Marketing Experts
                 </div>
             </div>
+            
+            <!-- Video Thumbnails -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                <img class="testi-thumb" src="images/yt-video-2.jpg" alt="Video Review 2" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('d1rgLh710Qo', 'images/yt-video-2.jpg', 'Client Video Review 2 - All Marketing Experts')">
+                <img class="testi-thumb" src="images/yt-video-3.jpg" alt="Video Review 3" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('zRMtzLHW5sA', 'images/yt-video-3.jpg', 'Client Video Review 3 - All Marketing Experts')">
+                <img class="testi-thumb" src="images/yt-video-4.jpg" alt="Video Review 4" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('-t8v6k-Wnjs', 'images/yt-video-4.jpg', 'Client Video Review 4 - All Marketing Experts')">
+                <img class="testi-thumb" src="images/yt-video-5.jpg" alt="Video Review 5" style="width: 100%; height: auto; border-radius: 4px; cursor: pointer; box-shadow: var(--card-shadow);" onclick="swapTestiVideo('aZb1zYjVrWs', 'images/yt-video-5.jpg', 'Client Video Review 5 - All Marketing Experts')">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials List Section -->
+    <section class="section section-bg" style="padding: 5rem 0;">
+        <div class="container" style="max-width: 900px;">
+            
+            <!-- Testimonial 1 -->
+            <div style="margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“These guys built us the best website! It went pretty fast and the business advice was very helpful as well. Steve is a former financial advisor from Morgan Stanley and brought a totally different set of skills to us that other developers didn't even bring up. Very organized and professional!”</p>
+                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~C. CHECKER</h4>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div style="margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“My boss asked me to get us help with our website that looked really bad. I found Marketing Experts, called them and 2 other companies. They were by far the most knowledgeable and nice. Steve speaks in plain understandable terms and you can tell he is experienced. They are reasonably priced but VERY proactive and responsive with us. I refer them to other office managers because they make our lives easier by handling all stuff digital.”</p>
+                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~EMMA W.</h4>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div style="margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“I just finished my website with MD Marketing Experts and I have to say that the company is amazing. They worked with me every step of the way. I got every little thing that I needed and wanted. I had prompt feedback and prompt responses to emails, texts, and phone calls. There was absolutely no lag in information. Everything I asked for was answered. They went well and beyond means to make me happy. There was never a 'no' or a hesitancy or excuses about why they couldn't get something done. All they did was exceed my expectations.”</p>
+                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~NATALIE SHARP, FNP-BC</h4>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div style="margin-bottom: 1rem;">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic;">“I like that I don't have to worry about anything. It's with one company instead of with 12 different people. Everything is together and synced. Everything makes sense. Previously, there wasn't enough flow. The right hand didn't know what the left was doing. Now we monitor more what's working and what's not so we don't spend our money on what's not working. Everyone is so helpful. If there is something I don't know the answer to, they say 'I'll find out. I'll call the company. I'll talk to them.' They researched products and services that we do. They've done webinars that I don't have time to do. They're really helpful like that. I really think the whole company is great.”</p>
+                <h4 style="font-size: 1.05rem; text-transform: uppercase; color: var(--text-dark); font-weight: 800; letter-spacing: 0.5px;">~SANDRA SIGNORELLI, OFFICE MANAGER</h4>
+            </div>
+
         </div>
     </section>
 
@@ -60,5 +87,12 @@
     <div id="footer-placeholder"></div>
 
     <script src="js/main.js"></script>
+    <script>
+        function swapTestiVideo(videoId, imageSrc, caption) {
+            document.getElementById('main-testi-img').src = imageSrc;
+            document.getElementById('main-testi-link').href = 'https://youtu.be/' + videoId;
+            document.getElementById('main-testi-caption').textContent = caption;
+        }
+    </script>
 </body>
 </html>
