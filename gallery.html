@@ -10,7 +10,7 @@
         .gallery-grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 35px;
             margin-top: 4rem;
         }
         .gallery-item-card {
@@ -20,6 +20,7 @@
             border: 1px solid rgba(0,0,0,0.05);
             background-color: var(--white);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .gallery-item-card:hover {
             transform: scale(1.03);
@@ -39,6 +40,154 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Gallery Lightbox Modal Styles */
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
+        }
+        .gallery-modal-content {
+            position: relative;
+            background-color: var(--white);
+            width: 90%;
+            max-width: 960px;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            z-index: 10000;
+            overflow: visible;
+            animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .gallery-modal-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #000;
+            color: #fff;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10005;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease;
+        }
+        .gallery-modal-close:hover {
+            transform: scale(1.1);
+        }
+        .gallery-modal-close svg {
+            width: 12px;
+            height: 12px;
+            fill: #fff;
+        }
+        .gallery-modal-body {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            max-height: 85vh;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .gallery-modal-left {
+            background-color: #f7f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-right: 1px solid rgba(0,0,0,0.06);
+            max-height: 85vh;
+            overflow: hidden;
+        }
+        .gallery-modal-left img {
+            max-width: 100%;
+            max-height: 75vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .gallery-modal-right {
+            padding: 2.5rem;
+            overflow-y: auto;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .gallery-modal-right h4 {
+            font-size: 1.8rem;
+            color: #01bfd2;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .gallery-modal-right h5 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+        .gallery-modal-right h5 a {
+            color: #ff6900;
+            text-decoration: underline;
+        }
+        .gallery-modal-right p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        @media (max-width: 768px) {
+            .gallery-modal-body {
+                grid-template-columns: 1fr;
+                max-height: 90vh;
+            }
+            .gallery-modal-left {
+                padding: 1rem;
+                max-height: 40vh;
+                border-right: none;
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+            }
+            .gallery-modal-left img {
+                max-height: 35vh;
+            }
+            .gallery-modal-right {
+                padding: 1.5rem;
+                max-height: 50vh;
+            }
+            .gallery-modal-close {
+                top: 10px;
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -55,31 +204,31 @@
 
     <!-- Section 1: Website Design Gallery -->
     <section class="section" style="padding: 5rem 0;">
-        <div class="container" style="max-width: 900px; text-align: center;">
+        <div class="container" style="text-align: center;">
             <h2 style="font-size: 2.2rem; color: #01bfd2; margin-bottom: 2rem; text-transform: uppercase;">WEBSITE DESIGN GALLERY</h2>
             <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; text-align: left;">Would you go to a company whose office looks run-down on the outside, and is cluttered and falling apart on the inside? Absolutely not. The same goes for websites – think of your website as your virtual office in a neighborhood full of other companies' virtual offices.</p>
             <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3rem; text-align: left;">Potential clients will visit many websites before deciding on who to contact. Let's make that an easy decision by making your website the best in the industry. All Marketing Experts can take care of everything, including but not limited to logo creation, <a href="graphic-design.html" style="color: #ff6900; text-decoration: underline;">graphic art</a>, programming, and overall design – we do it all. We make sure your company's website looks sophisticated and professional. Couple that with our <a href="marketing.html" style="color: #ff6900; text-decoration: underline;">marketing services</a> and you'll have a recipe for successful business growth!</p>
             
             <!-- Gallery Items Grid -->
             <div class="gallery-grid-4">
-                <div class="gallery-item-card"><img src="images/port-hudson.png" alt="Portfolio Image 1"></div>
-                <div class="gallery-item-card"><img src="images/port-minichill.jpg" alt="Portfolio Image 2"></div>
-                <div class="gallery-item-card"><img src="images/port-bench.png" alt="Portfolio Image 3"></div>
-                <div class="gallery-item-card"><img src="images/port-gcr.png" alt="Portfolio Image 4"></div>
-                <div class="gallery-item-card"><img src="images/port-port6.jpg" alt="Portfolio Image 5"></div>
-                <div class="gallery-item-card"><img src="images/port-bus.png" alt="Portfolio Image 6"></div>
-                <div class="gallery-item-card"><img src="images/port-albatross.png" alt="Portfolio Image 7"></div>
-                <div class="gallery-item-card"><img src="images/port-roofing.png" alt="Portfolio Image 8"></div>
-                <div class="gallery-item-card"><img src="images/port-montage.jpg" alt="Portfolio Image 9"></div>
-                <div class="gallery-item-card"><img src="images/port-barr.png" alt="Portfolio Image 10"></div>
-                <div class="gallery-item-card"><img src="images/port-fertility.jpg" alt="Portfolio Image 11"></div>
-                <div class="gallery-item-card"><img src="images/port-tms.jpg" alt="Portfolio Image 12"></div>
-                <div class="gallery-item-card"><img src="images/port-crg.png" alt="Portfolio Image 13"></div>
-                <div class="gallery-item-card"><img src="images/port-xpd.png" alt="Portfolio Image 14"></div>
-                <div class="gallery-item-card"><img src="images/port-spark.png" alt="Portfolio Image 15"></div>
-                <div class="gallery-item-card"><img src="images/port-couples.jpg" alt="Portfolio Image 16"></div>
-                <div class="gallery-item-card"><img src="images/port-diamond.jpg" alt="Portfolio Image 17"></div>
-                <div class="gallery-item-card"><img src="images/port-gforce.png" alt="Portfolio Image 18"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-hudson.png')"><img src="images/port-hudson.png" alt="Hudson Paul Salon"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-tms.jpg')"><img src="images/port-tms.jpg" alt="TMS Long Island Corp"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-bench.png')"><img src="images/port-bench.png" alt="Bench Artisan"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-gcr.png')"><img src="images/port-gcr.png" alt="Garden City Renovations"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-couples.jpg')"><img src="images/port-couples.jpg" alt="The Couples Center"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-bus.png')"><img src="images/port-bus.png" alt="Guardian Bus Company"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-albatross.png')"><img src="images/port-albatross.png" alt="Albatross MFG"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-xpd.png')"><img src="images/port-xpd.png" alt="XP-Dyte Builders Network"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-montage.jpg')"><img src="images/port-montage.jpg" alt="Montage Travel"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-barr.png')"><img src="images/port-barr.png" alt="Resilient Health Institute"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-fertility.jpg')"><img src="images/port-fertility.jpg" alt="The Integrative Fertility MD"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-roofing.png')"><img src="images/port-roofing.png" alt="Nassau Roofing Experts"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-spark.png')"><img src="images/port-spark.png" alt="Spark Global Logistics"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-gforce.png')"><img src="images/port-gforce.png" alt="G Force Solutions"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-crg.png')"><img src="images/port-crg.png" alt="Cove Roofing Group"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-port6.jpg')"><img src="images/port-port6.jpg" alt="BOSS Freight Management"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-diamond.jpg')"><img src="images/port-diamond.jpg" alt="The Diamond League"></div>
+                <div class="gallery-item-card" onclick="openGalleryModal('port-minichill.jpg')"><img src="images/port-minichill.jpg" alt="Vitamin Supplement"></div>
             </div>
         </div>
     </section>
@@ -110,9 +259,156 @@
         </div>
     </section>
 
+    <!-- Gallery Lightbox Modal -->
+    <div id="gallery-modal" class="gallery-modal" style="display: none;">
+        <div class="gallery-modal-overlay" onclick="closeGalleryModal()"></div>
+        <div class="gallery-modal-content">
+            <button class="gallery-modal-close" onclick="closeGalleryModal()">
+                <svg viewBox="0 0 1792 1792"><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"></path></svg>
+            </button>
+            <div class="gallery-modal-body">
+                <div class="gallery-modal-left">
+                    <img id="modal-img" src="" alt="Project Screenshot">
+                </div>
+                <div class="gallery-modal-right">
+                    <h4 id="modal-title">Project Title</h4>
+                    <h5 id="modal-website">Website: <a id="modal-link" href="" target="_blank"></a></h5>
+                    <p id="modal-desc">Project description...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
     <script src="js/main.js"></script>
-</body>
-</html>
+    <script>
+        const galleryData = {
+            "port-hudson.png": {
+                "title": "Hudson Paul Salon",
+                "website": "https://www.hudsonpaulsalon.com/",
+                "desc": "Simone wanted an aesthetically beautiful website that would reflect the elegance and sophistication of their hair salon. To achieve this, I utilized a combination of modern web development technologies. The site was built with a responsive design to ensure it looks stunning across all devices. I used HTML5 and CSS3 for a clean and contemporary layout, incorporating high-quality images and a refined color palette that aligned with the salon's brand identity. JavaScript was employed for smooth navigation and interactive elements, while WordPress served as the content management system, and Elementor as a page builder allowing the client to easily update content. Additionally, I optimized the site for fast loading times and ensured SEO best practices were followed to enhance visibility in search engines. The result is a website that not only looks beautiful but also offers an excellent user experience."
+            },
+            "port-tms.jpg": {
+                "title": "TMS Long Island Corp",
+                "website": "https://www.cornerstoneplasticsurgery.com/",
+                "desc": "Stephen and Kristen Perret came to us they had just spent a lot of money on a very poorly built website that was not attractive at all and had a bad user interface. We were asked to promote the website to get more business but felt it was not adequate and would not convert to leads so, we rebuilt the website from the ground up and thus they have a very beautiful, professional and appealing website now for people who suffer from depression. In addition to the website, we created a brand new logo for them. And also worked on Search Engine Optimisation for their website."
+            },
+            "port-bench.png": {
+                "title": "Bench Artisan",
+                "website": "https://benchartisan.com/",
+                "desc": "Paul Karian sought a website that was modern, professional, and straightforward, perfectly reflecting their craftsmanship in bench manufacturing. To achieve this, I utilized a range of web development technologies. The design was kept minimalistic, with a focus on clean lines and an intuitive layout, implemented using HTML5 and CSS3. JavaScript was employed to add subtle interactivity and smooth transitions, enhancing the user experience without overwhelming the simplicity of the design. WordPress was selected as the content management system and Divi as a page builder for its flexibility and ease of updating content. I also made sure the website was fully responsive, ensuring it delivered a consistent and polished look across all devices. Additionally, SEO best practices and performance optimizations were applied to ensure fast loading times and improved search engine rankings. The result is a sleek and professional website that aligns perfectly with the client's desire for simplicity and modernity."
+            },
+            "port-gcr.png": {
+                "title": "Garden City Renovations",
+                "website": "https://gardencityrenovations.com/",
+                "desc": "Garden City Renovations needed to stand out in the highly competitive general contracting business so we got to work. We created the entire brand to look and feel trustworthy and professional so homeowners are inspired to call and utilize their useful services."
+            },
+            "port-couples.jpg": {
+                "title": "The Couples Center",
+                "website": "https://www.bellavaspa.com/",
+                "desc": "The client needed a simple but pretty website for couples counseling with a relationship counselor. They also wanted a simple CMS and theme so they can manage the backend of the website from their end in the long run. So we used Wordpress and Divi theme and also provided a detailed document with instructions to manage the admin panel. They also hired us for the Search Engine Optimisation and Digital Marketing for this website."
+            },
+            "port-bus.png": {
+                "title": "Guardian Bus Company",
+                "website": "https://guardianbus.com/",
+                "desc": "A bus company is trusted with our most precious cargo - CHILDREN! Therefore, we needed to create a website that positioned Guardian as a safe, reliable company that puts safety at the forefront of all their marketing materials."
+            },
+            "port-albatross.png": {
+                "title": "Albatross MFG",
+                "website": "https://albatrossmfg.com/",
+                "desc": "Albatross is a leading developer and manufacturer of quality products and needed to be positioned as a 'quality first' company. We created the website to highlight their prestigious customers, eclectic product abilities and handle E-Commerce."
+            },
+            "port-xpd.png": {
+                "title": "XP-Dyte Builders Network",
+                "website": "https://xpdytebuilders.com/",
+                "desc": "An innovative start-up company offering a unique approach to home renovation needed a website thats informative, relatable and makes visitors call. We created the brand from the ground up including corporate identity with a fresh logo, website and we also provide ongoing online marketing to get them noticed and more customers."
+            },
+            "port-montage.jpg": {
+                "title": "Montage Travel",
+                "website": "https://montagetravel.com/",
+                "desc": "Client needed a beautiful blog focusing on European vacation. She already had a website but was not happy with it. so we provided a colourful logo which she loved and matched the website theme to the same."
+            },
+            "port-barr.png": {
+                "title": "Resilient Health Institute",
+                "website": "https://drkeirabarr.com/",
+                "desc": "Dr. Keira Barr is a physician to women who want more out of midlife. She wanted a clean elegant website with pretty colors. We worked on her Logo, Website Design, Wordpress, SEO and Digital Marketing"
+            },
+            "port-fertility.jpg": {
+                "title": "The Integrative Fertility MD",
+                "website": "https://www.cornerstoneplasticsurgery.com/",
+                "desc": "The client needed an elegant Wordpress website and logo for their website promoting her personal brand for Integrative Fertility. We also worked on the content writing forher blog posts and SEO."
+            },
+            "port-roofing.png": {
+                "title": "Nassau Roofing Experts",
+                "website": "https://nassauroofingexperts.com/",
+                "desc": "Despite Nassau Roofing Experts being a fairly small company they are in an ultra competitive niche. We made sure the website addresses homeowners' needs by highlighting their certifications and reviews while providing a pleasant user experience to the website visitors. We also set the website up (with SEO) to rank highly in its local service areas and they enjoy numerous inquiries for new roofs."
+            },
+            "port-spark.png": {
+                "title": "Spark Global Logistics",
+                "website": "https://www.sparkglb.com/",
+                "desc": "TSpark Global Logistics is a leading forwarding company based in Australia. (Sydney, Melbourne). They hired us to redesign their website from Joomla to Wordpress. They loved the website and hired us to redesign their websites for different locations in US, China and Europe."
+            },
+            "port-gforce.png": {
+                "title": "G Force Solutions",
+                "website": "https://gforce-solutions.com/",
+                "desc": "We have worked on G Force Solutions' website and marketing from start to end. From logo, design, website, SEO, to running marketing campaigns."
+            },
+            "port-crg.png": {
+                "title": "Cove Roofing Group",
+                "website": "https://coveroofinggroup.com/",
+                "desc": "Cove Roofing Group came to us simply requesting a nice website and to be found on Google. They now reap the benefits of investing in both!"
+            },
+            "port-port6.jpg": {
+                "title": "BOSS Freight Management",
+                "website": "",
+                "desc": "BOSS Freight Management is an independent Australian Freight Forwarder delivering customised international shipping company. We worked on their logo, website and the spinning globe video."
+            },
+            "port-diamond.jpg": {
+                "title": "The Diamond League",
+                "website": "https://www.diamondleague.com.au/",
+                "desc": "Stuart from Australia needed a small, simple but chique logo and website to manage the events for their competitive league. They also hired us for their website maintenance on a monthly basis."
+            },
+            "port-minichill.jpg": {
+                "title": "Vitamin Supplement",
+                "website": "http://www.minichill.com/",
+                "desc": "miniCHILL Relaxation Shots are focused on being stress-free, so they wanted their website to be stress-free, too! Their new website highlights reviews from the Wall Street Journal & The New York Times and offers customers a simple shop to purchase directly online."
+            }
+        };
+
+        function openGalleryModal(imgName) {
+            const data = galleryData[imgName];
+            if (!data) return;
+
+            document.getElementById('modal-img').src = "images/" + imgName;
+            document.getElementById('modal-title').textContent = data.title;
+            
+            if (data.website) {
+                document.getElementById('modal-website').style.display = 'block';
+                const link = document.getElementById('modal-link');
+                link.href = data.website;
+                link.textContent = data.website;
+            } else {
+                document.getElementById('modal-website').style.display = 'none';
+            }
+
+            document.getElementById('modal-desc').textContent = data.desc;
+            
+            // Show modal and disable body scroll
+            document.getElementById('gallery-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('gallery-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Close on Esc key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGalleryModal();
+            }
+        });
+    </script>
