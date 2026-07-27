@@ -131,7 +131,7 @@ img {
 }
 
 .main-header.shrink .nav-link:hover, .main-header.shrink .nav-link.active {
-    color: var(--primary-color);
+    color: #f16334;
 }
 
 .header-container {
@@ -181,7 +181,7 @@ img {
 }
 
 .nav-link:hover, .nav-link.active {
-    color: var(--primary-color);
+    color: #f16334;
 }
 
 .nav-link svg {
@@ -226,7 +226,7 @@ img {
 
 .dropdown-link:hover, .dropdown-link.active {
     background-color: var(--light-bg);
-    color: var(--primary-color);
+    color: #f16334;
     padding-left: 1.8rem;
 }
 
@@ -664,7 +664,7 @@ textarea.form-control {
         color: var(--text-dark);
     }
     .main-header.shrink .nav-link:hover, .main-header.shrink .nav-link.active {
-        color: var(--primary-color);
+        color: #f16334;
     }
     .main-header.shrink .nav-menu {
         top: 70px;
