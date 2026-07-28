@@ -1538,7 +1538,7 @@ textarea.form-control {
 
 @media (max-width: 768px) {
     .cta-title {
-        font-size: 2.0rem;
+        font-size: 2.3rem;
     }
 }
 
@@ -1555,6 +1555,35 @@ textarea.form-control {
 @media (max-width: 768px) {
     .testimonials-text-col {
         padding-left: 0;
+    }
+}
+
+/* SEO Case Study Grid & Cards */
+.seo-case-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.seo-case-card {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    overflow: visible;
+}
+
+.seo-case-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .seo-case-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
