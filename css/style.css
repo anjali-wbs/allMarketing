@@ -235,13 +235,30 @@ img {
     position: relative;
 }
 
+/* Hover bridge to keep submenu open while moving mouse */
+.dropdown-submenu::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 25px;
+    height: 100%;
+    background: transparent;
+    display: none;
+    z-index: 999;
+}
+
+.dropdown-submenu:hover::after {
+    display: block;
+}
+
 .dropdown-submenu .submenu {
     position: absolute;
     right: 100%;
     top: -0.8rem;
     background-color: var(--white);
     min-width: 240px;
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     opacity: 0;
     visibility: hidden;
@@ -250,7 +267,7 @@ img {
     transition: var(--transition);
     border: 1px solid rgba(0,0,0,0.05);
     border-top: 3px solid #ff6900;
-    z-index: 1005;
+    z-index: 1000;
 }
 
 .dropdown-submenu:hover .submenu {

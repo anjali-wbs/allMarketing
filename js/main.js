@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Toggle dropdowns on mobile/tablet
+    // Toggle dropdowns on mobile
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         const link = item.querySelector('.nav-link');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (dropdown && link) {
             link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 1024) {
+                if (window.innerWidth <= 768) {
                     e.preventDefault();
                     item.classList.toggle('active');
                 }
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Toggle sub-dropdowns (like Marketing) on mobile/tablet
+    // Toggle sub-dropdowns (like Marketing) on mobile
     const submenus = document.querySelectorAll('.dropdown-submenu');
     submenus.forEach(submenu => {
         const link = submenu.querySelector('.dropdown-submenu-title');
@@ -48,16 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (list && link) {
             link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 1024) {
+                if (window.innerWidth <= 768) {
                     if (!submenu.classList.contains('open')) {
                         e.preventDefault();
                         e.stopPropagation();
                         submenu.classList.add('open');
-                    } else {
-                        // Allow closing on second tap
-                        e.preventDefault();
-                        e.stopPropagation();
-                        submenu.classList.remove('open');
                     }
                 }
             });
