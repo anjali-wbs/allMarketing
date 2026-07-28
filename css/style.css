@@ -887,7 +887,7 @@ textarea.form-control {
 
 .expertise-section {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
     background-color: var(--white);
     width: 100vw;
@@ -946,16 +946,24 @@ textarea.form-control {
 }
 
 .expertise-right img {
-    height: 52px;
-    max-width: 170px;
     width: auto;
+    max-width: 100%;
     object-fit: contain;
     transition: var(--transition);
 }
 
-.expertise-right img[src*="wordpress"] {
-    height: 72px;
-}
+.expertise-right img[src*="logo-1"] { height: 56px; }
+.expertise-right img[src*="logo-2"] { height: 48px; }
+.expertise-right img[src*="logo-3"] { height: 58px; }
+.expertise-right img[src*="logo-4"] { height: 56px; }
+.expertise-right img[src*="logo-5"] { height: 56px; }
+.expertise-right img[src*="logo-6"] { height: 50px; }
+.expertise-right img[src*="logo-7"] { height: 58px; }
+.expertise-right img[src*="wordpress"] { height: 90px; }
+.expertise-right img[src*="logo-9"] { height: 48px; }
+.expertise-right img[src*="m-soft"] { height: 34px; }
+.expertise-right img[src*="logo-15"] { height: 48px; }
+.expertise-right img[src*="hubspot"] { height: 36px; }
 
 .expertise-right img:hover {
     transform: scale(1.08);
@@ -987,7 +995,7 @@ textarea.form-control {
         width: auto;
     }
     .expertise-right img[src*="wordpress"] {
-        height: 52px;
+        height: 76px;
     }
     .expertise-left {
         padding: 2.5rem 1.5rem;
