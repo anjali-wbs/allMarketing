@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typewriterElement) {
         const words = ["WEBSITE DESIGN", "ONLINE MARKETING", "CORPORATE BRANDING", "AND MORE..."];
         let wordIndex = 0;
-        let charIndex = 0;
+        let charIndex = words[0].length;
 
         function type() {
             const currentWord = words[wordIndex];
@@ -133,7 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(type, typeSpeed);
         }
 
-        setTimeout(type, 800);
+        // Since "WEBSITE DESIGN" is already hardcoded in HTML, wait 2 seconds, then start typing the next word
+        setTimeout(() => {
+            typewriterElement.textContent = '';
+            charIndex = 0;
+            wordIndex = 1;
+            type();
+        }, 2000);
     }
 });
 
