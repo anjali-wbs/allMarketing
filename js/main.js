@@ -229,7 +229,7 @@ function renderFooter() {
                         <li><a href="${prefix}index.html">Home</a></li>
                         <li><a href="${prefix}company-profile/">Company Profile</a></li>
                         <li><a href="${prefix}gallery/">Gallery</a></li>
-                        <li><a href="${prefix}contact/">Sitemap</a></li>
+                        <li><a href="#">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
