@@ -985,20 +985,28 @@ textarea.form-control {
 
 @media (max-width: 768px) {
     .expertise-right {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem 1.5rem;
         padding: 2.5rem 1.5rem;
     }
     .expertise-right img {
-        height: 38px;
-        max-width: 120px;
+        max-width: 100%;
         width: auto;
-    }
-    .expertise-right img[src*="wordpress"] {
-        height: 76px;
     }
     .expertise-left {
         padding: 2.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .expertise-right {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 1rem;
+        padding: 2rem 1rem;
+    }
+    .expertise-right img {
+        max-width: 100%;
+        width: auto;
     }
 }
 
@@ -1865,6 +1873,44 @@ textarea.form-control {
     .nav-menu .dropdown-submenu-title.active {
         color: #ff6900 !important;
     }
+}
+
+/* Videography Page Stat Card Styles */
+.video-stat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.video-stat-wrapper img {
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+}
+
+.video-stat-card {
+    text-align: left;
+    border-left: 3px solid #01bfd2;
+    padding-left: 1.5rem;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Mobile Hamburger to X Transformation */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 
