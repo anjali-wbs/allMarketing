@@ -1587,6 +1587,57 @@ textarea.form-control {
     }
 }
 
+/* Videography Statistics Overlay Card */
+.video-stat-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.video-stat-wrapper img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+}
+
+.video-stat-card {
+    position: absolute;
+    bottom: -15px;
+    right: -30px;
+    background-color: var(--white);
+    padding: 1.2rem 1.5rem;
+    border-left: 5px solid #01bfd2;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+}
+
+.video-stat-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .video-stat-card {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        margin-top: 1.5rem;
+        max-width: 100%;
+        box-shadow: none;
+        border-left-width: 4px;
+        padding: 1rem;
+    }
+    .video-stat-wrapper {
+        display: block;
+        margin-bottom: 0;
+    }
+}
+
 
 
 
