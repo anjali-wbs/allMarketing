@@ -1017,8 +1017,9 @@ textarea.form-control {
     z-index: 2 !important;
 }
 
-[class$="-hero-label"] span {
-    font-weight: 800 !important;
+[class$="-hero-label"] span,
+[class$="-hero-label"] strong {
+    font-weight: 700 !important;
 }
 
 @media (max-width: 991px) {
