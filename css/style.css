@@ -78,7 +78,7 @@ img {
     padding: 0.8rem 1.8rem;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -1604,6 +1604,10 @@ textarea.form-control {
     }
     .contact-custom-form {
         padding-inline: 20px;
+    }
+    .section,
+    section.section {
+        padding: 2.5rem 0 !important;
     }
 }
 
