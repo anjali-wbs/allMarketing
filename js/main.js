@@ -55,9 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (list && link) {
             link.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    submenu.classList.toggle('open');
+                    if (!submenu.classList.contains('open')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        submenu.classList.add('open');
+                    }
                 }
             });
         }
