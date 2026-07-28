@@ -82,6 +82,37 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
+
+    // Typewriter Text Rotator for Homepage
+    const typewriterElement = document.getElementById('typewriter-text');
+    if (typewriterElement) {
+        const words = ["WEBSITE DESIGN", "ONLINE MARKETING", "CORPORATE BRANDING", "AND MORE..."];
+        let wordIndex = 0;
+        let charIndex = 0;
+        
+        function type() {
+            const currentWord = words[wordIndex];
+            typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+            
+            let typeSpeed = 120;
+            
+            if (charIndex === currentWord.length) {
+                // Pause at full word, then clear instantly and start next word
+                setTimeout(() => {
+                    typewriterElement.textContent = '';
+                    charIndex = 0;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    type();
+                }, 2000);
+                return;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+        
+        setTimeout(type, 800);
+    }
 });
 
 function renderHeader() {
