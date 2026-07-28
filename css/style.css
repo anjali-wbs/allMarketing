@@ -86,12 +86,10 @@ img {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
-    box-shadow: 0 5px 15px rgba(46, 163, 242, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(46, 163, 242, 0.4);
 }
 
 .btn-outline {
@@ -1746,6 +1744,19 @@ textarea.form-control {
     }
     .home-divider::after {
         margin-left: 0.8rem !important;
+    }
+    
+    /* Mobile Menu Underlined Bold Links Override */
+    .nav-menu a,
+    .nav-menu .dropdown-submenu-title {
+        text-decoration: underline !important;
+        font-weight: 700 !important;
+        color: #000000 !important;
+    }
+    .nav-menu a.active,
+    .nav-menu .active > a,
+    .nav-menu .dropdown-submenu-title.active {
+        color: #ff6900 !important;
     }
 }
 

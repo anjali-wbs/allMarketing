@@ -66,20 +66,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Set active nav link
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.toLowerCase();
     const navLinks = document.querySelectorAll('.nav-link, .dropdown-link');
+    
+    // Get the page name from the URL, e.g. "company-profile"
+    const pathParts = currentPath.split('/');
+    const lastPart = pathParts[pathParts.length - 1]; // e.g. "company-profile.html" or "company-profile"
+    const currentPageName = lastPart.replace('.html', '') || 'index';
+    
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href && currentPath.includes(href) && href !== 'index.html' && href !== './') {
-            link.classList.add('active');
-            // If inside a dropdown, highlight the parent too
-            const parentItem = link.closest('.nav-item');
-            if (parentItem) {
-                const parentLink = parentItem.querySelector('.nav-link');
-                if (parentLink) parentLink.classList.add('active');
+        if (href) {
+            const cleanHref = href.split('/').pop().replace('.html', '').toLowerCase();
+            
+            if (cleanHref && cleanHref === currentPageName && cleanHref !== 'index' && cleanHref !== '#' && cleanHref !== '') {
+                link.classList.add('active');
+                // Highlight parent items in the menu hierarchy
+                let parent = link.parentElement;
+                while (parent && !parent.classList.contains('nav-menu')) {
+                    if (parent.classList.contains('nav-item')) {
+                        const parentLink = parent.querySelector('.nav-link');
+                        if (parentLink) parentLink.classList.add('active');
+                    }
+                    if (parent.classList.contains('dropdown-submenu')) {
+                        const subTitle = parent.querySelector('.dropdown-submenu-title');
+                        if (subTitle) subTitle.classList.add('active');
+                    }
+                    parent = parent.parentElement;
+                }
+            } else if ((href === 'index.html' || href === './' || href === '/') && (currentPageName === 'index' || currentPageName === '')) {
+                link.classList.add('active');
             }
-        } else if (href === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html'))) {
-            link.classList.add('active');
         }
     });
 
