@@ -250,6 +250,7 @@ img {
     transition: var(--transition);
     border: 1px solid rgba(0,0,0,0.05);
     border-top: 3px solid #ff6900;
+    z-index: 1005;
 }
 
 .dropdown-submenu:hover .submenu {
