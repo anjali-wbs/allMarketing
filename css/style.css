@@ -1051,6 +1051,7 @@ textarea.form-control {
         align-items: center !important;
         justify-content: center !important;
         text-align: center !important;
+        height: 320px !important;
     }
 }
 
