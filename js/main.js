@@ -237,7 +237,7 @@ function renderFooter() {
         <div class="footer-bottom-bar">
             <div class="container">
                 <div class="footer-bottom-content">
-                    ALL Marketing Experts &copy;2023. All Rights Reserved.
+                    ALL Marketing Experts &copy;2026. All Rights Reserved.
                 </div>
             </div>
         </div>
