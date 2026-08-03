@@ -136,25 +136,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const name = document.getElementById('form-name').value.trim();
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        const originalBtnText = submitBtn ? submitBtn.textContent : 'SUBMIT';
 
-        // Center the "GET FREE CONSULTATION" heading if it exists
-        const heading = contactForm.parentElement.querySelector('h4');
-        if (heading) {
-            heading.style.textAlign = 'center';
-            heading.style.marginBottom = '1rem';
+        // Set loading state
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SENDING...';
         }
 
-        // Success State Animation
-        contactForm.innerHTML = `
-            <div style="text-align: center; padding: 2rem 1rem;">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#29c4a9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem; animation: scaleUp 0.5s ease-out;">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                <h3 style="color: #2d3940; margin-bottom: 1rem;">Thank You, ${name}!</h3>
-                <p style="color: #4e4e4e; font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">Your consultation request has been sent successfully. One of our advisors will call you shortly at the phone number or email provided.</p>
-                <p style="color: #01bfd2; font-size: 0.95rem; font-weight: 600;">We look forward to helping you grow your business!</p>
-            </div>
-        `;
+        // Get Form Data
+        const formData = new FormData(contactForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        // Submit to Web3Forms
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            const resData = await response.json();
+            if (response.status === 200) {
+                // Center the "GET FREE CONSULTATION" heading if it exists
+                const heading = contactForm.parentElement.querySelector('h4');
+                if (heading) {
+                    heading.style.textAlign = 'center';
+                    heading.style.marginBottom = '1rem';
+                }
+
+                // Success State Animation
+                contactForm.innerHTML = `
+                    <div style="text-align: center; padding: 2rem 1rem;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#29c4a9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem; animation: scaleUp 0.5s ease-out;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <h3 style="color: #2d3940; margin-bottom: 1rem;">Thank You, ${name}!</h3>
+                        <p style="color: #4e4e4e; font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">Your consultation request has been sent successfully. One of our advisors will call you shortly at the phone number or email provided.</p>
+                        <p style="color: #01bfd2; font-size: 0.95rem; font-weight: 600;">We look forward to helping you grow your business!</p>
+                    </div>
+                `;
+            } else {
+                console.error(resData);
+                alert(resData.message || 'Something went wrong. Please try again.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error submitting form:', error);
+            alert('There was a network error. Please try again.');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        });
     });
 });
