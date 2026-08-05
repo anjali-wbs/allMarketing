@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | All Marketing Experts</title>
+    <meta name="description" content="View the complete sitemap of All Marketing Experts to easily navigate our website and find our design, SEO, and marketing services.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/Frame 1618874966.svg" type="image/svg+xml">
+    <style>
+        .sitemap-section {
+            padding: calc(var(--header-height) + 4rem) 0 5rem;
+        }
+        .sitemap-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+        .sitemap-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #ff6900;
+        }
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .sitemap-group {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+        .sitemap-group:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        .sitemap-group h3 {
+            font-size: 1.4rem;
+            color: #01bfd2;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+        .sitemap-list {
+            list-style: none;
+        }
+        .sitemap-list li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .sitemap-list li::before {
+            content: '•';
+            color: #ff6900;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        .sitemap-list a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+        .sitemap-list a:hover {
+            color: #ff6900;
+            text-decoration: underline;
+        }
+        .sitemap-sublist {
+            list-style: none;
+            margin-top: 0.6rem;
+            margin-left: 1rem;
+            border-left: 2px dashed var(--light-bg);
+            padding-left: 1rem;
+        }
+        .sitemap-sublist li::before {
+            content: '–';
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Sitemap Navigation Section -->
+    <section class="sitemap-section">
+        <div class="container">
+            <h1 class="sitemap-title">Sitemap</h1>
+            <div class="sitemap-grid">
+                
+                <!-- Main Pages -->
+                <div class="sitemap-group">
+                    <h3>Main Page</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../gallery/">Gallery Portfolio</a></li>
+                        <li><a href="../contact/">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- About Us -->
+                <div class="sitemap-group">
+                    <h3>About Us</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="../company-profile/">Company Profile</a></li>
+                        <li><a href="../testimonials/">Client Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <!-- Core Services -->
+                <div class="sitemap-group">
+                    <h3>Core Services</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="../website-design/">Website Design</a></li>
+                        <li><a href="../branding/">Branding</a></li>
+                        <li><a href="../business-consulting/">Business Consulting</a></li>
+                        <li><a href="../graphic-design/">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <!-- Marketing Services -->
+                <div class="sitemap-group">
+                    <h3>Marketing Services</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="../marketing/">Marketing Overview</a></li>
+                        <li>
+                            <span style="font-weight: 600; color: var(--text-dark);">Specialties:</span>
+                            <ul class="sitemap-sublist">
+                                <li><a href="../search-engine-optimization/">Search Engine Optimization (SEO)</a></li>
+                                <li><a href="../pay-per-click/">Pay Per Click (PPC)</a></li>
+                                <li><a href="../social-media/">Social Media Marketing</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Media Production -->
+                <div class="sitemap-group">
+                    <h3>Content & Media</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="../research-content/">Research & Content Development</a></li>
+                        <li><a href="../photography/">Professional Photography</a></li>
+                        <li><a href="../videography/">Video Production & Videography</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

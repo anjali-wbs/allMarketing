@@ -153,7 +153,7 @@ function getPathPrefix() {
         "branding", "business-consulting", "company-profile", "contact",
         "gallery", "graphic-design", "marketing", "pay-per-click",
         "photography", "research-content", "search-engine-optimization",
-        "social-media", "testimonials", "videography", "website-design"
+        "social-media", "testimonials", "videography", "website-design", "sitemap"
     ];
     
     const isSub = pathSegments.some(segment => subpages.includes(segment));
@@ -229,7 +229,7 @@ function renderFooter() {
                         <li><a href="${prefix || './'}">Home</a></li>
                         <li><a href="${prefix}company-profile/">Company Profile</a></li>
                         <li><a href="${prefix}gallery/">Gallery</a></li>
-                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="${prefix}sitemap/">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
