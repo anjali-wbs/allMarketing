@@ -1115,19 +1115,54 @@ textarea.form-control {
 }
 
 .profile-hero-label {
-    background-color: var(--white);
-    padding: 1rem 3rem;
-    border-radius: 4px;
-    display: inline-block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    color: var(--text-dark);
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 1.25rem 3rem !important;
+    background-color: var(--white) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
 }
 
-.profile-hero-label span {
-    font-weight: 800;
+.profile-hero-title {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #000000;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-align: center;
+}
+
+.profile-hero-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ff6900;
+    text-transform: uppercase;
+    margin-top: 6px;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .profile-hero-title {
+        font-size: 36px;
+    }
+    .profile-hero-subtitle {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-hero-title {
+        font-size: 20px;
+    }
+    .profile-hero-subtitle {
+        font-size: 0.75rem;
+        margin-top: 3px;
+    }
 }
 
 /* Testimonial Page Specific Elements */
