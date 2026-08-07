@@ -153,7 +153,7 @@ function getPathPrefix() {
         "branding", "business-consulting", "company-profile", "contact",
         "gallery", "graphic-design", "marketing", "pay-per-click",
         "photography", "research-content", "search-engine-optimization",
-        "social-media", "testimonials", "videography", "website-design"
+        "social-media", "testimonials", "videography", "website-design", "sitemap"
     ];
     
     const isSub = pathSegments.some(segment => subpages.includes(segment));
@@ -165,7 +165,7 @@ function renderHeader() {
     const headerHTML = `
     <header class="main-header">
         <div class="container header-container">
-            <a href="${prefix}index.html" class="logo">
+            <a href="${prefix || './'}" class="logo">
                 <img src="${prefix}images/logo.png" alt="All Marketing Experts Logo" style="height: 50px; width: auto; object-fit: contain;">
             </a>
             <div class="menu-toggle" id="mobile-menu">
@@ -174,7 +174,7 @@ function renderHeader() {
                 <span></span>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="${prefix}index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="${prefix || './'}" class="nav-link">Home</a></li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">About Us <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     <ul class="dropdown">
@@ -226,10 +226,10 @@ function renderFooter() {
                 <div class="footer-widget">
                     <h4>Quick links</h4>
                     <ul class="footer-links">
-                        <li><a href="${prefix}index.html">Home</a></li>
+                        <li><a href="${prefix || './'}">Home</a></li>
                         <li><a href="${prefix}company-profile/">Company Profile</a></li>
                         <li><a href="${prefix}gallery/">Gallery</a></li>
-                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="${prefix}sitemap/">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
@@ -237,7 +237,7 @@ function renderFooter() {
         <div class="footer-bottom-bar">
             <div class="container">
                 <div class="footer-bottom-content">
-                    ALL Marketing Experts &copy;2023. All Rights Reserved.
+                    ALL Marketing Experts &copy;2026. All Rights Reserved.
                 </div>
             </div>
         </div>

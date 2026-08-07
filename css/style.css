@@ -1944,14 +1944,21 @@ textarea.form-control {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+<<<<<<< HEAD
 /* Founder Note & Experience Logos Section Styles */
 .founder-section {
     padding: 4.5rem 0 3.5rem 0;
+=======
+/* Founder Section */
+.founder-section {
+    padding: 5rem 0;
+>>>>>>> b44576cc36286b3bd93bffdf29936bdffd1f91c8
     background-color: var(--white);
 }
 
 .founder-grid {
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: 260px 1fr;
     gap: 3.5rem;
     align-items: center;
@@ -2138,10 +2145,231 @@ textarea.form-control {
 
     .founder-quote {
         font-size: 1.15rem;
+=======
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .founder-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+}
+
+.founder-image-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+}
+
+.founder-image-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid #edf2f5;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    background-color: #edf2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.founder-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.founder-badge {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d1e3d;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+}
+
+.founder-content {
+    text-align: left;
+}
+
+@media (max-width: 991px) {
+    .founder-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .founder-name {
+        order: 1;
+        margin-top: 1rem;
+    }
+    .founder-title {
+        order: 2;
+        margin-bottom: 1.5rem;
+    }
+    .founder-meta {
+        order: 3;
+    }
+    .founder-quote {
+        order: 4;
+        margin-top: 1rem;
+    }
+}
+
+.founder-meta {
+    color: #2ea3f2;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.founder-quote {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #0d1e3d;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .founder-quote {
+        font-size: 1.3rem;
+    }
+}
+
+.founder-name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0d1e3d;
+    display: inline-block;
+    border-bottom: 2px solid #ff6900;
+    padding-bottom: 2px;
+    margin-bottom: 0.2rem;
+}
+
+.founder-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Experience Logos Section */
+.experience-section-new {
+    background-color: #f7f9fb;
+    padding: 3.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.experience-title-new {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #8c98a5;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.experience-logos-new {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .experience-logos-new {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .experience-logos-new {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+.logo-card-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    padding: 0.8rem;
+    height: 135px;
+    gap: 0.4rem;
+}
+
+.logo-img-wrapper-new {
+    height: 85px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img-wrapper-new img,
+.logo-img-wrapper-new svg {
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-name-new {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #8c98a5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: calc(var(--header-height) + 2rem) 0 2rem;
+    }
+    .founder-section {
+        padding: 3rem 0;
+>>>>>>> b44576cc36286b3bd93bffdf29936bdffd1f91c8
     }
 }
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b44576cc36286b3bd93bffdf29936bdffd1f91c8
 
 
 
